@@ -1,6 +1,6 @@
 mysql:
   if:   which mysql
   else:
-    - sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
-    - sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-    - sudo apt-get -y install mysql-server
+    - /bin/bash -c "sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'"
+    - /bin/bash -c "sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'"
+    - /bin/bash -c "sudo apt-get -y install mysql-server"
