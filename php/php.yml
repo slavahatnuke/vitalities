@@ -1,0 +1,22 @@
+
+php:
+  if:   which php
+  else:
+    - sudo add-apt-repository -y ppa:ondrej/php5
+    - sudo apt-get update -y
+    - sudo apt-get install -y php5
+
+
+#
+#php 5.3:
+#  if:   which php
+#  else: sudo apt-get install -y php5
+#
+#mysql:
+#  if:   which mysql
+#  else: sudo ./mysql/install.sh
+#
+#mongo:
+#  if:   which mongo
+#  else: sudo apt-get install -y mongodb
+

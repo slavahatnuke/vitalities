@@ -1,0 +1,12 @@
+
+download sf2:
+  if:   cat /home/vagrant/project/app/console || cat /home/vagrant/tmpsf2/app/console
+  else: composer.phar create-project symfony/framework-standard-edition /home/vagrant/tmpsf2/
+
+copy sf2:
+  if:   cat /home/vagrant/project/app/console
+  else: cp -r /home/vagrant/tmpsf2/* /home/vagrant/project/
+
+permissions:
+  if:  cd /home/vagrant/project/ && vm/vitality/symfony2/permissions.sh
+

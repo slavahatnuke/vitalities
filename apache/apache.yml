@@ -1,0 +1,3 @@
+apache:
+  if:   which apachectl
+  else: sudo apt-get install -y apache2

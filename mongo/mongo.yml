@@ -1,0 +1,5 @@
+
+mongo:
+  if:   which mongo
+  else: sudo apt-get install -y mongodb
+
