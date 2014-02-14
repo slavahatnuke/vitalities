@@ -1,0 +1,8 @@
+php5-xdebug:
+  if:   php -i | grep xdebug
+  else: sudo apt-get -y install php5-xdebug
+
+
+#php5-xdebug config:
+#  if:   cmp  /etc/php5/cli/conf.d/xdebug.ini /vagrant/vitality/php5-xdebug/xdebug.ini
+#  else: sudo cp /vagrant/vitality/php5-xdebug/xdebug.ini /etc/php5/cli/conf.d/xdebug.ini
