@@ -1,0 +1,6 @@
+
+sf alias:
+  if:   cat ~/.bashrc | grep sf
+  else:
+    - echo "alias sf='php app/console'" >> ~/.bashrc
+    - source ~/.bashrc

@@ -1,0 +1,20 @@
+
+pecl:
+  if: vitality @/pecl/pecl
+
+php5-mongo:
+  if: find /usr/lib/php5 -name 'mongo.so'
+  else: sudo pecl install mongo
+
+
+#php5-mongo config:
+#  if:
+#    - php -i | grep mongo
+#    - cat /etc/php5/fpm/conf.d/mongo.ini | grep mongo.so
+#    - cat /etc/php5/cli/conf.d/mongo.ini | grep mongo.so
+#  else:
+#    - echo "extension=mongo.so" > /tmp/mongo.ini
+#    - sudo cp /tmp/mongo.ini /etc/php5/fpm/conf.d/mongo.ini
+#    - sudo cp /tmp/mongo.ini /etc/php5/cli/conf.d/mongo.ini
+#    - sudo service nginx reload
+#    - sudo service php5-fpm restart

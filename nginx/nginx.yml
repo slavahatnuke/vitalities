@@ -1,0 +1,11 @@
+
+nginx:
+  if: sudo dpkg --list | grep nginx
+  else: sudo apt-get install -y nginx
+
+
+#nginx config:
+#  if: cmp /etc/nginx/sites-available/default /home/vagrant/project/vm/vitality/nginx/default
+#  else:
+#    - sudo cp /home/vagrant/project/vm/vitality/nginx/default /etc/nginx/sites-available/default
+#    - sudo service nginx reload
