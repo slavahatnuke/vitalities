@@ -5,3 +5,8 @@ php:
     - sudo add-apt-repository -y ppa:ondrej/php5
     - sudo apt-get update -y
     - sudo apt-get install -y php5
+
+
+#php.ini cli config:
+#  if:   cmp  /vagrant/vitality/php/php.ini /etc/php5/cli/conf.d/php.ini
+#  else: sudo cp /vagrant/vitality/php/php.ini /etc/php5/cli/conf.d/php.ini

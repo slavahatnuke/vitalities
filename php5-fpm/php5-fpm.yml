@@ -1,0 +1,12 @@
+
+php5-fpm:
+  if: sudo dpkg --list | grep php5-fpm
+  else: sudo apt-get install -y php5-fpm
+
+
+#php.ini fpm config:
+#  if:   cmp  /vagrant/vitality/php/php.ini /etc/php5/fpm/conf.d/php.ini
+#  else:
+#    - sudo cp /vagrant/vitality/php/php.ini /etc/php5/fpm/conf.d/php.ini
+#    - sudo service nginx reload
+#    - sudo service php5-fpm restart
