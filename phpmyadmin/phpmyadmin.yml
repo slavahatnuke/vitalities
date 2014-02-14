@@ -1,0 +1,10 @@
+phpmyadmin:
+  if:   sudo dpkg --list | grep phpmyadmin
+  else:
+    - /bin/bash -c "sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/dbconfig-reinstall boolean true'"
+    - /bin/bash -c "sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/dbconfig-install boolean true'"
+    - /bin/bash -c "sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/app-password-confirm password root'"
+    - /bin/bash -c "sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/mysql/admin-pass password root'"
+    - /bin/bash -c "sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/mysql/app-pass password root'"
+    - /bin/bash -c "sudo debconf-set-selections <<< 'phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2'"
+    - /bin/bash -c "sudo apt-get -y install phpmyadmin"
