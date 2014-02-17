@@ -1,0 +1,11 @@
+
+java:
+  if: which java
+  else:
+    - sudo /bin/bash -c "sudo add-apt-repository ppa:webupd8team/java -y"
+    - sudo /bin/bash -c "sudo apt-get update -y"
+    - sudo /bin/bash -c "sudo echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections"
+    - sudo /bin/bash -c "sudo echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections"
+    - sudo /bin/bash -c "sudo apt-get install oracle-java7-installer -y"
+    - sudo /bin/bash -c "sudo update-java-alternatives -s java-7-oracle -y"
+    - sudo /bin/bash -c "java -version"
